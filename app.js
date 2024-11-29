@@ -7,7 +7,10 @@ const petRoutes = require('./routes/petRoutes');
 const app = express();
 
 // Habilitar CORS
-app.use(cors());
+app.use(cors({
+  origin: 'https://connect-pet-frontend.onrender.com', // Substitua pelo domínio do frontend
+  credentials: true,
+}));
 
 // Middleware para JSON
 app.use(express.json());
